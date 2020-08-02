@@ -1,6 +1,7 @@
 *.cmake
 *.tcl
 CMakeCache.txt
+Makefile
 */Testing
 */CMakeFiles
 */build
