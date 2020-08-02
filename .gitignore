@@ -1,0 +1,7 @@
+*.cmake
+*.tcl
+CMakeCache.txt
+*/Testing
+*/CMakeFiles
+*/build
+*/bin
