@@ -554,7 +554,7 @@ THREE.OrbitControls = function(object, domElement) {
     rotateDelta
       .subVectors(rotateEnd, rotateStart)
       .multiplyScalar(scope.rotateSpeed);
-	 
+
     var element =
       scope.domElement === document ? scope.domElement.body : scope.domElement;
 

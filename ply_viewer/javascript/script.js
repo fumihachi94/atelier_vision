@@ -1,6 +1,9 @@
 // ページの読み込みを待つ
 window.addEventListener('load', init);
 
+const width = 640;
+const height = 450;
+
 // レンダラーを作成
 const renderer = new THREE.WebGLRenderer({
    	canvas: document.querySelector('#myCanvas')
@@ -11,8 +14,12 @@ const scene = new THREE.Scene();
 
 
 // カメラを作成
-const camera = new THREE.PerspectiveCamera(45, 640 / 450);
+// (視野角, 画面のアスペクト比, カメラに映る最短距離, カメラに映る最遠距離)
+const camera = new THREE.PerspectiveCamera(45, width / height, 1, 100000);
 camera.position.set(0, 0, +1000);
+
+const controls = new THREE.OrbitControls(camera);
+//controls.enableDamping = true;
 
 
 // オビジェクトの生成
@@ -20,9 +27,7 @@ const geometry = new THREE.BoxGeometry(400, 400, 400);
 const material = new THREE.MeshNormalMaterial();
 const box = new THREE.Mesh(geometry, material);
 
-function init() {
-	const width = 640;
-   const height = 450;   
+function init() {   
    renderer.setPixelRatio(window.devicePixelRatio);
    renderer.setSize(width, height);
 }
@@ -61,11 +66,12 @@ let rot = 0;
 
 function tickCamRot(){
 	if(playFlag){
-		rot += 0.5; // [deg]
-		const radian = rot * Math.PI / 180; 
-		camera.position.x = 1000 * Math.sin(radian);
-		camera.position.z = 1000 * Math.cos(radian);
-		camera.lookAt(new THREE.Vector3(0, 0, 0));
+		//rot += 0.5; // [deg]
+		//const radian = rot * Math.PI / 180; 
+		//camera.position.x = 1000 * Math.sin(radian);
+		//camera.position.z = 1000 * Math.cos(radian);
+		controls.update();
+		//camera.lookAt(new THREE.Vector3(0, 0, 0));
 		renderer.render(scene, camera); // レンダリング
 		requestAnimationFrame(tickCamRot);
    }else{
