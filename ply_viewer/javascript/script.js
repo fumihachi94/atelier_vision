@@ -14,6 +14,7 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(45, 640 / 450);
 camera.position.set(0, 0, +1000);
 
+
 // オビジェクトの生成
 const geometry = new THREE.BoxGeometry(400, 400, 400);
 const material = new THREE.MeshNormalMaterial();
@@ -40,7 +41,7 @@ btn.addEventListener('click', function() {
 	}
    console.log(playFlag);
 	scene.add(box);
-   tick(); 
+   tickCamRot(); 
 }, false);
 
 
@@ -55,6 +56,22 @@ function tick() {
 		renderer.render(scene, camera);
 	}
 } 
+
+let rot = 0;
+
+function tickCamRot(){
+	if(playFlag){
+		rot += 0.5; // [deg]
+		const radian = rot * Math.PI / 180; 
+		camera.position.x = 1000 * Math.sin(radian);
+		camera.position.z = 1000 * Math.cos(radian);
+		camera.lookAt(new THREE.Vector3(0, 0, 0));
+		renderer.render(scene, camera); // レンダリング
+		requestAnimationFrame(tickCamRot);
+   }else{
+		renderer.render(scene, camera);
+	}
+}
 
 
 //---------------------------
