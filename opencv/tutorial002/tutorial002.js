@@ -1,6 +1,11 @@
 let loadOpencv = document.getElementById('opencv');
 let video      = document.getElementById('videoInput');
 
+var keyName;
+let keyEvent   = document.addEventListener('keydown', (event) => {
+    keyName = event.key;
+});
+
 const FPS = 30;
 let streaming = false;
 
@@ -13,6 +18,8 @@ function onOpenCvReady() {
 }
   
 function onVideoReady(){
+    video.height = 480;
+    video.width = 640;
     src = new cv.Mat(video.height, video.width, cv.CV_8UC4);
     dst = new cv.Mat(video.height, video.width, cv.CV_8UC1);
     cap = new cv.VideoCapture(video);
@@ -22,6 +29,7 @@ function onVideoReady(){
         video.play();
         // schedule the first one.
         setTimeout(processVideo, 0);
+        console.log("Streaming Start.");
     }).catch(function(_err) {
         console.log("An error occurred! " + _err);
     });
@@ -40,15 +48,33 @@ function processVideo() {
         // start processing.
         cap.read(src);
         cv.cvtColor(src, dst, cv.COLOR_RGBA2GRAY);
+        console.log(dst.width);
         cv.imshow('canvasOutput', dst);
+        if(keyName == "s"){
+            // console.log("Key : " + keyName);
+            saveCanvas('canvasOutput');
+            keyName = NaN;
+        }
         // schedule the next one.
         let delay = 1000/FPS - (Date.now() - begin);
-        console.log("ok2");
         setTimeout(processVideo, delay);
-    } catch (err) {
-        cv.utils.printError(err);
+    } catch (_err) {
+        console.log("An error occurred! " + _err);
     }
 };
+
+function saveCanvas(canvas_id)
+{
+	var canvas = document.getElementById(canvas_id);
+	//アンカータグを作成
+	var a = document.createElement('a');
+	//canvasをJPEG変換し、そのBase64文字列をhrefへセット
+	a.href = canvas.toDataURL('image/jpeg', 0.85);
+	//ダウンロード時のファイル名を指定
+	a.download = 'download.jpg';
+	//クリックイベントを発生させる
+	a.click();
+}
 
 
 loadOpencv.onload = function(){
