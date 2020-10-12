@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+  <script>
+    // ページの読み込みを待つ
+    window.addEventListener('load', init);
+
+    function init() {
+
+      // サイズを指定
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+
+      // レンダラーを作成
+      const renderer = new THREE.WebGLRenderer({
+        canvas: document.querySelector('#myCanvas')
+      });
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setSize(width, height);
+
+      // シーンを作成
+      const scene = new THREE.Scene();
+
+      // カメラを作成
+      const camera = new THREE.PerspectiveCamera(45, width / height);
+      camera.position.set(0, 0, +1000);
+      
+      // 平行光源を作成
+      const directionalLight = new THREE.DirectionalLight(0xffffff);
+      directionalLight.position.set(1, 1, 1);
+      scene.add(directionalLight);
+      
+      // マテリアルを作成
+      const material = new THREE.MeshNormalMaterial();
+    //   const material = new THREE.MeshStandardMaterial({
+    //       map: new THREE.TextureLoader().load('earthmap1k.jpg'),
+    //       side: THREE.DoubleSide
+    //   });
+      
+      // 球体の形状を作成します
+      const geometry = new THREE.SphereGeometry(300, 30, 30);
+      // 形状とマテリアルからメッシュを作成します
+      const earthMesh = new THREE.Mesh(geometry, material);
+      // シーンにメッシュを追加します
+      scene.add(earthMesh);
+      
+    //   const geometry = new THREE.SphereGeometry(300, 30, 30);
+    //   const material = new THREE.MeshNormalMaterial();
+    //   const box = new THREE.Mesh(geometry, material);
+    //   scene.add(box);
+
+      tick();
+
+      // 毎フレーム時に実行されるループイベントです
+      function tick() {
+        earthMesh.rotation.y += 0.01;
+        renderer.render(scene, camera); // レンダリング
+
+        requestAnimationFrame(tick);
+      }
+    }
+    function fitWindow() {
+          if(document.getElementById("myCanvas") != null) {
+              var w = document.body.clientWidth;
+              var h = document.documentElement.clientHeight;
+              document.getElementById("myCanvas").style.width = w + "px";
+              document.getElementById("myCanvas").style.height = h + "px";
+              }
+    }
+  </script>
+</head>
+<body onload="fitWindow()" onresize="fitWindow()">
+  <canvas id="myCanvas"></canvas>
+</body>
+</html>
