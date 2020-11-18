@@ -103,5 +103,8 @@
         box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
     }
 
-    
+    #res{
+        background-color: green;
+        width: 50px;
+    }
    

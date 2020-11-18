@@ -5,34 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="startSwitch.css">
-    <script src="long-press.js"></script>
     <script src="index.js"></script>
     <title>ACC Demo</title>
 </head>
 <body>
-    <h1>ACC Demo</h1>
+    <h1>ACC Demo Simulator</h1>
     <figure class="meter">
-        <img src="image/meter_base.jpg" id="meterDisp" alt="メータ">
+        <img src="image/meter_igoff.jpg" id="meterDisp" alt="メータ">
         <figcaption class="caption" id="setVelocityBase">
             <span class="mgr-10px">SET</span>km/h
         </figcaption>
-        <figcaption class="setVelocity" id="setVelocity">
-        </figcaption>
+        <figcaption class="setVelocity" id="setVelocity"></figcaption>
+        <!-- <figcaption class="egoVelocity" id="egoVelocity">100 km/h</figcaption> -->
     </figure>
     <figure class="steer">
         <img src="image/steering_wheel.png" alt="ステアリング">
         <button class="resSwitch" id="resSwitch" onclick="pushRES()">+ RES</button>
         <button class="setSwitch" id="setSwitch" onclick="pushSET()">- SET</button>
-        
+        <span id="res">+ RES</span>
     </figure>
     <div class="btn-engine-start">
-        <input type="checkbox" name="ignition" class="checkbox" id="igSwitch" onclick="ignitionON();" checked>
+        <input type="checkbox" name="ignition" class="checkbox" id="igSwitch" onclick="ignitionON();">
         <label for="igSwitch" class="engineStart">
             <button class="igLight"></button>
             <br><br>START<br>STOP<br>
         </label>
     </div>
-    <div id="button">test</div> 
-    <p id="r">赤い部分をマウスかタップで長押し</p>
 </body>
 </html>
