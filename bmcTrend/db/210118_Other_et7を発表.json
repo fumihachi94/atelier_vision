@@ -1,0 +1,31 @@
+{
+  "date": "2021-01-18",
+  "category": "Other",
+  "title": "et7を発表",
+  "body": [
+    "\n",
+    "バッテリーパックごと交換する『パワースワップステーション』の設置を、現在177カ所→2021年末までに500カ所にするとしています。さらに「車両が自動でステーションに入り、ユーザーは中央のディスプレイを1回タップするだけで、車両から降りることなくセルフサービススワップを開始できる」という『PowerSwap Station 2.0』を展開することも表明。\n",
+    "\n",
+    "**自動運転機能の性能比較**\n",
+    "\n",
+    "Items|NIO|Tesla\n",
+    "--|--|--\n",
+    "対象車両|ET7|Model-S|\n",
+    "販売年|2022予定|2021現在|\n",
+    "自動運転機能価格|約11,000円/月(サブスク売り)|871,000円(オプション)|\n",
+    "自動運転用SoC|Nvidia Drive Orion|Tesla SFD Soc|\n",
+    "処理能力| 1016TOPS | 144TOPS\n",
+    "Frカメラ解像度| 8Mp | 1.2Mp \n",
+    "車両認識距離 | 約687m | 約250m\n",
+    "\n",
+    "※約80ヶ月利用するとTeslaのFSDの価格を上回ることになる。ただし、納車後の一定期間は無料期間が設定されるのではないかと予想。\n",
+    "\n",
+    "> 参考：\n",
+    "> 1. [中国版テスラ「ニーオ」、高性能EVセダン発表…航続は1000km以上 | レスポンス](https://response.jp/article/2021/01/13/342070.html)\n",
+    "> 1. [NIO - NAD](https://www.nio.com/nad)\n",
+    "> 1. [「驚くほど単純」、半導体メーカーの常識超えるTesla製AIコア | 日経クロステック（xTECH）](https://xtech.nikkei.com/atcl/nxt/column/18/00001/04390/)\n",
+    "> 1. [Triple Forward Camera from Tesla Model 3 - System Plus Consulting](https://www.systemplus.fr/reverse-costing-reports/triple-forward-camera-from-tesla-model-3/)\n",
+    "\n",
+    "\n"
+  ]
+}

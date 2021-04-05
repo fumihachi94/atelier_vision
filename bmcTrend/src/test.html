@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trend Post</title>
+    <script src="app.js"></script>
+</head>
+<body>
+    <form action="" method="post">
+        <p><input type="text" name="msg"></p>
+        <p><input type="submit" value="Add"></p>
+    </form>
+    <div class="timeline">
+        <form action="" method="post">
+            <div class="post-article">
+                <input type="text" id="post-control" placeholder="message">
+                <span>
+                    <button type="button" class="btn-add" onclick="save2json()"> + </button>
+                </span>
+            </div>
+        </form>
+
+        <!-- <div id="content"></div>
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script>
+            document.getElementById('content').innerHTML =
+            marked('# Marked in the browser\n\nRendered by **marked**.');
+            axios.get('./test.md').then(response => document.querySelector('#content').innerHTML = marked(response.data));
+        </script> -->
+
+        <nav>
+            <h1>メニュー</h1>
+            <ul>
+            <li><a href="index.html">Main page</a></li>
+            <li><a href="test.html">test</a></li>
+            <li><a href="hogehoghoegeogeoghoehgoehgo.html">other</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

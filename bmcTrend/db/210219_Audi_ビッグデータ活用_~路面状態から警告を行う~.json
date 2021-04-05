@@ -1,0 +1,20 @@
+{
+  "date": "2021-02-19",
+  "category": "Audi",
+  "title": "ビッグデータ活用 ~路面状態から警告を行う~",
+  "body": [
+    "\n",
+    "AudiはV2Xの仕組みを活用して、車両挙動から路面摩擦係数を推定し「Local hazrd alerts」サービスを提供している。氷のはった滑りやすい路面に差し掛かる前に、リアルタイムでドライバに注意喚起を行う。\n",
+    "NIRAは2018年から車両情報から道路状態を予測するサービスを提供していたが、Audi/HEREと連携を始めたことでサービスがより展開された事になる。\n",
+    "\n",
+    "- 約170万台の収集データを活用\n",
+    "- 路面の摩擦係数を推定し路面状態から事前に注意喚起\n",
+    "- スウェーデンの[NIRA Dynamics AB](https://niradynamics.se/)及び[HERE Technologies](https://www.here.com/)(BMW, Daimler, Audiが所有する地図会社)との共同サービスとなる。\n",
+    "\n",
+    "> 参考：\n",
+    "> - [Precise data for greater safety: Audi warns its drivers about slippery roads](https://www.volkswagenag.com/en/news/2021/03/precise-data-for-greater-safety--audi-warns-its-drivers-about-sl.html)\n",
+    "> - [NIRA DynamicsとKlimatorが提携を強化　自動車の摩擦データで道路天候モデルを向上 | NIRA Dynamics ABのプレスリリース | 共同通信PRワイヤー](https://kyodonewsprwire.jp/release/201802050662)\n",
+    "\n",
+    "\n"
+  ]
+}
