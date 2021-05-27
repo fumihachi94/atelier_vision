@@ -1,3 +1,15 @@
+
+
+function timerStartStop(){
+    var obj = document.getElementById("st_end");
+    obj.value = "■";
+    obj.style.backgroundColor = "red";
+}
+
+
+//------------------
+
+
 function countdown(){
     var count = document.getElementById("input_value").value;
 
