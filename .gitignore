@@ -1,10 +1,12 @@
 *.cmake
 *.tcl
+*.mp4
 CMakeCache.txt
 Makefile
 */Testing
 */CMakeFiles
 */build
 */bin
+movie2image/dst/*
 .vscode
 .bmcTrend/db/*
