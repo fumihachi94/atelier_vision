@@ -34,25 +34,3 @@ function save2json(){
 
     return false;
 }
-
-
-require('dotenv').config();
-const got = require('got');
-
-(async () => {
-  const {body} = await got(
-    'https://api.github.com/repos/:owner/:repo/contents/foo.csv',
-    {
-      json: true,
-      headers: {
-        accept: 'application/vnd.github.v3+json',
-        authorization: `token ${process.env.TOKEN}`
-      }
-    }
-  );
-
-  const decodedContent = Buffer.from(body.content, 'base64').toString();
-  console.log(decodedContent);
-})().catch(err => {
-  console.log(err);
-});
