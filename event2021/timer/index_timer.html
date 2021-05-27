@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="startSwitch.css">
+    <script src="index.js"></script>
+    <title>ACC Demo</title>
+</head>
+<body>
+    <h1  style="text-align:center;">お題当てゲーム</h1>
+
+    <div id="timer" style="text-align:center;">
+        <time>13</time>：<time>13</time>
+        <br>
+        <input type="number" name="minutes" min="0" max="99">
+        :
+        <input type="text" inputmode="numeric" pattern="\d*">
+        <datalist id="list_min">
+            <option value="10"></option>
+        </datalist>
+    </div>
+
+    <br>
+
+    <form name="timer">
+        <input type="text" value="">分
+        <input type="text" value="">秒<br>
+        <input type="button" value="スタート" onclick="cntStart()">
+        <input type="button" value="ストップ" onclick="cntStop()">
+    </form>
+
+    <input type="text" id="input_value" value="0">
+    <input type="button" onclick="countdown()" value="スタート">
+    <div id="remain"></div>
+
+    <!-- <figure class="timer">
+        <img src="image/meter_igoff.jpg" id="timer_body" alt="タイマー">
+        <figcaption class="caption" id="setVelocityBase">
+            <span class="mgr-10px">SET</span>km/h
+        </figcaption>
+        <figcaption class="setVelocity" id="setVelocity"></figcaption>
+    </figure>
+    <figure class="steer">
+        <img src="image/steering_wheel.png" alt="ステアリング">
+        <button class="resSwitch" id="resSwitch" onclick="pushRES()">+ RES</button>
+        <button class="setSwitch" id="setSwitch" onclick="pushSET()">- SET</button>
+        <span id="res">+ RES</span>
+    </figure> -->
+    <!-- <div class="btn-engine-start">
+        <input type="checkbox" name="ignition" class="checkbox" id="igSwitch" onclick="ignitionON();">
+        <label for="igSwitch" class="engineStart">
+            <button class="igLight"></button>
+            <br><br>START<br>STOP<br>
+        </label>
+    </div> -->
+</body>
+</html>
