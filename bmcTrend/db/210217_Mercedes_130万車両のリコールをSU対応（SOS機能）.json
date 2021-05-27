@@ -1,0 +1,22 @@
+{
+  "date": "2021-02-17",
+  "category": "Mercedes",
+  "title": "130万車両のリコールをSU対応（SOS機能）",
+  "body": [
+    "\n",
+    "事故発生時に救急要請を行う「自動eCallシステム」において、事故発生時の場所ではなく最後にIG-ONした場所の位置データを送信してしまう不具合が発覚。ただし、SOSボタンを手動で操作した場合は、正常に作動するとのこと。\n",
+    "\n",
+    "- 問題\n",
+    "  - 通信モジュールのソフトウェア設計に問題あり\n",
+    "  （衝突の影響で通信モジュールへの電力供給が寸断されると、位置情報が最後のIG-ON位置として送信される。おそらくバッファとして残してあるデータがそのまま送信される。）\n",
+    "- 対応方法\n",
+    "  - OTAリプロ\n",
+    "  - 販売店でのリプロ\n",
+    "\n",
+    "> 参考：\n",
+    "> - [Mercedes-Benz to fix nearly 1.3M recalled vehicles with software update](https://www.thecarconnection.com/news/1131287_mercedes-benz-to-fix-nearly-1-3m-recalled-vehicles-with-software-update)\n",
+    "> - [ダイムラー、米でメルセデス・ベンツ129万台リコール　ソフトに問題 | Reuters](https://jp.reuters.com/article/mercedes-benz-recall-idJPKBN2AF09R)\n",
+    "\n",
+    "\n"
+  ]
+}
