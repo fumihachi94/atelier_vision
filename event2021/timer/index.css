@@ -22,14 +22,19 @@ input{
 }
 
 #st_end{
-    background-color: rgba(84, 158, 0, 0.9);
+    background-color: rgba(84, 158, 0, 0.0);
+    border-color: rgba(84, 158, 0, 0.0);
+    border-radius:20px;
     width: 60px;
     height:60px;
-    border-radius:20px;
     text-align: center;
     font-size: 50%;
+    color: rgba(49, 184, 8, 1.0);
 }
 
+input:focus{
+    outline: 0;
+}
 
 
 /*     

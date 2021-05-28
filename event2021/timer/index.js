@@ -2,8 +2,13 @@
 
 function timerStartStop(){
     var obj = document.getElementById("st_end");
-    obj.value = "■";
-    obj.style.backgroundColor = "red";
+    if(obj.value == "▶"){
+        obj.value = "■";
+        obj.style.font.color = rgba(255, 24, 43, 1.0);
+    }else{
+        obj.value = "▶";
+        obj.style.color = rgba(255, 24, 43, 1.0);
+    }
 }
 
 
