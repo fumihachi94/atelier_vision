@@ -6,16 +6,16 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="startSwitch.css">
     <script src="index.js"></script>
-    <title>ACC Demo</title>
+    <title>HUREAI Game Timer</title>
 </head>
 <body>
     <h1  style="text-align:center;">お題当てゲーム</h1>
 
+    <div class="circle"><div class="circle-inner">loading</div></div>
+
     <div id="timer" style="text-align:center;">
         <input type="button" id="st_end" value="▶" onclick="timerStartStop()">
-        <input type="number" name="minutes" min="0" max="99" value="00">
-        :
-        <input type="number" name="minutes" min="0" max="99" value="00">
+        <input type="number" id="timer_body" min="0" max="999" value="00">
         <p>
         
     </div>
@@ -23,8 +23,8 @@
     <br>
 
     <form name="timer">
-        <input type="text" value="">分
-        <input type="text" value="">秒<br>
+        <input type="text" id="timer_set" value="">:
+        <input type="text" id="timer_set" value=""><br>
         <input type="button" value="スタート" onclick="cntStart()">
         <input type="button" value="ストップ" onclick="cntStop()">
     </form>

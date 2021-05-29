@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUREAI Game Timer</title>
+    <style>
+    body{
+        background-color: rgb(20, 20, 20);
+        color:rgb(250, 250, 250);
+    }
+    .container {
+        width: 400px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .gauge {
+        width: 400px;
+        height: 400px;
+    }
+    #timer_status{
+        color:#32953f;
+        font-size: 100%;
+        background-color: #7cfc00;
+        border-color: rgba(255, 255, 255, 0);
+        border-radius: 50%;
+        width: 70px;
+        height:70px;
+    }
+    #timer_reset{
+        color:#000000;
+        font-size: 100%;
+        background-color:darkgray;
+        border-color: rgba(255, 255, 255, 0);
+        border-radius: 50%;
+        width: 70px;
+        height:70px;
+    }
+    #timer_reset:hover{
+        background-color:#cecba9;
+    }
+    </style>
+    <script src="./justgage-1.2.2/raphael-2.1.4.min.js"></script>
+    <script src="./justgage-1.2.2/justgage.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="g1" class="gauge"></div>
+        <input type="button" id="timer_status" value="Start" onclick="timerStart()">
+        &ensp;&ensp;&ensp;
+        0 
+        <input type="range" id="set_timer" min="0" max="100" value="15">
+        100
+        &ensp;&ensp;&ensp;
+        <input type="button" id="timer_reset" value="Reset" onclick="timerReset()">
+        <br>
+        <input type="button" id="set_mytime" value="15s" onclick="setMyTime(15)">
+        <input type="button" id="set_mytime" value="60s" onclick="setMyTime(60)">
+    </div>
+    <script>
+    const resolusion = 0.1;
+    var timerobj;
+    var set_value = document.getElementById("set_timer");
+    var g1, timer_value, status;
+
+    const rangeOnChange = (e) =>{
+        g1.refresh(g1.originalValue, e.target.value)
+        g1.refresh(e.target.value);
+        timerStatusReset();
+        timer_value = set_value.value; // タイマーに設定時間をセット
+    }
+
+    window.onload = () => {
+        set_value.addEventListener('input', rangeOnChange); // スライダー変化時にイベントを発火
+        timer_value = set_value.value; // タイマーに設定時間をセット
+        g1 = new JustGage({
+            id: "g1",
+            value: set_value.value,
+            min: 0,
+            max: set_value.value,
+            decimals: 1,
+            donut: true,
+            gaugeWidthScale: 0.25,
+            counter: false,
+            hideInnerShadow: false,
+            customSectors: [{
+                color: "#ff8c10",
+                lo: 5,
+                hi: 100
+            },{
+                color: "#ff0000",
+                lo: 0,
+                hi: 5
+            }],
+            valueFontColor: "white",
+        });
+    }
+
+    function timerStart(){
+        status = document.getElementById("timer_status").value;
+        if(status == "Start"){
+            document.getElementById("timer_status").value = "Stop";
+            document.getElementById("timer_status").style.backgroundColor = "#ff8c10";
+            document.getElementById("timer_status").style.color = "#ffffff";//"#d2691e";
+            timerobj=setInterval("countDown()",100);
+        }else{
+            timerStatusReset();
+        }
+    }
+
+    function countDown(){
+        timer_value -= resolusion;
+        if(timer_value <= 0) {
+            timer_value = 0;
+            clearInterval(timerobj);
+        } 
+        g1.refresh(timer_value);
+    }
+
+    function timerReset(){
+        timerStatusReset();
+        g1.refresh(set_value.value);
+        timer_value = set_value.value; // タイマーに設定時間をセット 
+    }
+
+    function timerStatusReset(){
+        document.getElementById("timer_status").value = "Start";
+        document.getElementById("timer_status").style.backgroundColor = "#7cfc00";
+        document.getElementById("timer_status").style.color = "#32953f";
+        clearInterval(timerobj);
+    }
+
+    function setMyTime(myValue){
+        timerStatusReset();
+        set_value.value = myValue;
+        g1.refresh(g1.originalValue, set_value.value)
+        g1.refresh(set_value.value);
+        timer_value = set_value.value; // タイマーに設定時間をセット 
+    }
+    </script>
+</body>
+</html>

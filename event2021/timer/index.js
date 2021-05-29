@@ -1,14 +1,43 @@
 
+var timerobj;
 
 function timerStartStop(){
-    var obj = document.getElementById("st_end");
-    if(obj.value == "▶"){
-        obj.value = "■";
-        obj.style.font.color = rgba(255, 24, 43, 1.0);
-    }else{
-        obj.value = "▶";
-        obj.style.color = rgba(255, 24, 43, 1.0);
-    }
+  var obj = document.getElementById("st_end");
+  var count = document.getElementById("timer_body").value;
+
+  obj.value = (obj.value == "▶") ? "■" : "▶";
+  
+  if(obj.value == "■"){
+    obj.style.color = "red";
+  }else{
+    obj.style.color = "#319e08";
+  }
+
+
+    // if(obj.value == "▶"){
+    //   obj.value = "■";
+    //   obj.style.color = "red";
+
+    //   timerobj = setInterval(function(){
+    //     if(count < 1) count = 0; else count --;
+    //     document.getElementById("timer_body").value = count;
+    //     if(count==0){
+    //       clearInterval(timerobj);
+    //       obj.value = "▶";
+    //       obj.style.color = "#319e08";
+    //     }
+    //   } ,1000);
+    // }else{
+    //   learInterval(timerobj);
+    //   obj.value = "▶";
+    //   obj.style.color = "#319e08";
+    //   document.getElementById("timer_body").value = count;
+    // }
+}
+
+function timerStart()
+{
+  timerobj=setInterval("countDown()",1000);
 }
 
 
@@ -16,15 +45,14 @@ function timerStartStop(){
 
 
 function countdown(){
-    var count = document.getElementById("input_value").value;
-
-var countdownid = setInterval(function(){
-            count --;
-  remain.innerHTML=count;
+  var count = document.getElementById("input_value").value;
+  var countdownid = setInterval(function(){
+    count --;
+    remain.innerHTML=count;
     if(count==0){
-       clearInterval(countdownid);
-       }
-} ,1000);
+      clearInterval(countdownid);
+    }
+  } ,1000);
 }
 
 
