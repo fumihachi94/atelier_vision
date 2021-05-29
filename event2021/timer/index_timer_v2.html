@@ -31,24 +31,24 @@
             text-align: center;
         }
 
-        #point{
+        #point {
             float: left;
             background-color: rgb(41, 41, 41);
             width: 60%;
             height: 100px;
             font-size: 40pt;
-            text-align:center;
+            text-align: center;
             line-height: 100px;
         }
 
         #pointlist {
-            float:right;
+            float: right;
             width: 40%;
             margin: 0 auto;
             text-align: center;
         }
 
-        #getPoint:hover{
+        #getPoint:hover {
             color: #ff8c10;
         }
 
@@ -98,10 +98,14 @@
     <div class="current_point">
         <div id="point" style="font-size: 40pt;">0</div>
         <div id="pointlist">
-        <a id="getPoint" onclick="getPoint1st()">1st-G</a> : <input type="number" id="1st_game" value="0" min="0" max="15"><br>
-        <a id="getPoint" onclick="getPoint2st()">2st-G</a> : <input type="number" id="2st_game" value="0" min="0" max="15"><br>
-        <a id="getPoint" onclick="getPoint3st()">3st-G</a> : <input type="number" id="3st_game" value="0" min="0" max="15"><br>
-        <a id="getPoint" onclick="getPoint4st()">4st-G</a> : <input type="number" id="4st_game" value="0" min="0" max="15"><br>
+            <a id="getPoint" onclick="getPoint1st()">1st-G</a> : <input type="number" id="1st_game" value="0" min="0"
+                max="15"><br>
+            <a id="getPoint" onclick="getPoint2st()">2st-G</a> : <input type="number" id="2st_game" value="0" min="0"
+                max="15"><br>
+            <a id="getPoint" onclick="getPoint3st()">3st-G</a> : <input type="number" id="3st_game" value="0" min="0"
+                max="15"><br>
+            <a id="getPoint" onclick="getPoint4st()">4st-G</a> : <input type="number" id="4st_game" value="0" min="0"
+                max="15"><br>
         </div>
     </div>
 
@@ -115,7 +119,7 @@
         var point_3stG = document.getElementById("3st_game");
         var point_4stG = document.getElementById("4st_game");
 
-        function buttonDoubleclick(){
+        function buttonDoubleclick() {
             alert('Double Click');
         }
 
@@ -126,18 +130,18 @@
             timer_value = set_value.value; // タイマーに設定時間をセット
         }
 
-        function addPint(){
-            document.getElementById("point").innerHTML = 
-            parseInt(point_1stG.value) + 
-            parseInt(point_2stG.value) + 
-            parseInt(point_3stG.value) +
-            parseInt(point_4stG.value);
+        function addPint() {
+            document.getElementById("point").innerHTML =
+                parseInt(point_1stG.value) +
+                parseInt(point_2stG.value) +
+                parseInt(point_3stG.value) +
+                parseInt(point_4stG.value);
         }
 
-        const updateCurrentPoint = (e) =>{
-            if(e.target.value>15){
+        const updateCurrentPoint = (e) => {
+            if (e.target.value > 15) {
                 e.target.value = 15
-            }else if (e.target.value<0) {
+            } else if (e.target.value < 0) {
                 e.target.value = 0
             }
             addPint();
@@ -173,20 +177,20 @@
             });
         }
 
-        function getPoint1st(){
-            point_1stG.value =  Math.floor(parseFloat(timer_value)+0.9);
+        function getPoint1st() {
+            point_1stG.value = Math.floor(parseFloat(timer_value) + 0.9);
             addPint();
         }
-        function getPoint2st(){
-            point_2stG.value = Math.floor(parseFloat(timer_value)+0.9);
+        function getPoint2st() {
+            point_2stG.value = Math.floor(parseFloat(timer_value) + 0.9);
             addPint();
         }
-        function getPoint3st(){
-            point_3stG.value = Math.floor(parseFloat(timer_value)+0.9);
+        function getPoint3st() {
+            point_3stG.value = Math.floor(parseFloat(timer_value) + 0.9);
             addPint();
         }
-        function getPoint4st(){
-            point_4stG.value = Math.floor(parseFloat(timer_value)+0.9);
+        function getPoint4st() {
+            point_4stG.value = Math.floor(parseFloat(timer_value) + 0.9);
             addPint();
         }
 
