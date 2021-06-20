@@ -5,9 +5,6 @@ CMakeCache.txt
 Makefile
 cmake_install.cmake
 /CMakeFiles/*
-*/Testing
-*/build
-*/bin
 movie2image/dst/*
 .vscode
 .bmcTrend/db/*
