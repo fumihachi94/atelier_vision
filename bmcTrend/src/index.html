@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>OTA Benchmark</title>
+    <link rel="stylesheet" href="app/main.css">
+    <script type="text/javascript" src="app/main.js">
+    </script>
+</head>
+
+<body>
+    <header class="topMenu">
+        <h1>OTA Benchmark Top Menu</h1>
+    </header>
+
+    <main>
+        <div class="leftMenu">
+            <p><a href="../Audi/Audi.html" target="_blank" rel="noopener noreferrer">Audi</a></p>
+            <p><a href="ここにリンク先のURLを入れる" target="_blank" rel="noopener noreferrer">BMW</a></p>
+            <p><a href="../Tesla/Tesla.html" target="_blank" rel="noopener noreferrer">Tesla</a></p>
+            <p><a href="ここにリンク先のURLを入れる" target="_blank" rel="noopener noreferrer">Mercedes-benz</a></p>
+            <p><a href="../GM/BCM_GM.html" target="_blank" rel="noopener noreferrer">GM</a></p>
+            <p><a href="../Ford/Ford_Mustang_Mach-E.html" target="_blank" rel="noopener noreferrer">Ford</a></p>
+            <p><a href="../NIO/BCM_NIO.html"" target="_blank" rel="noopener noreferrer">NIO</a></p>
+            <p>KIA</p>
+            <p>NISSAN</p>
+            <p><a href="../Subaru/Subaru.html"" target="_blank" rel="noopener noreferrer">SUBARU</a></p>
+            <p>HONDA</p>
+            <p><a href="../Xpeng/Xpeng-G3.html"" target="_blank" rel="noopener noreferrer">Xpeng</a></p>
+            <p><a href="../Geely/Geely-ison.html"" target="_blank" rel="noopener noreferrer">Geely</a></p>
+            <p><a href="../ppt/ppt.html">ppt</a></p>
+        </div>
+        <div class="content">
+            <label for="menu">Contents</label>
+            <input type="checkbox" id="menu">
+            <ul class="dropdown">
+                <li>Company</li>
+                <li>Service</li>
+                <li>Contact</li>
+                <li>Links</li>
+                <li>Privacy</li>
+            </ul>
+            <div id="topContent">
+                <br>
+                <p style="text-align: left">・ 参考サイト:</p>
+                <a id="aTopContent" href="https://blog.mudatobunka.org/entry/2015/12/23/211425">JavaScript実行済みのDOMをHTMLファイルとして保存するブックマークレット - 無駄と文化</a>
+                
+            </div>
+            <div>
+                <form action="#">
+                    <input type="button" name="savebtn" value="Save" onclick="saveContent()" />
+                    <input type="button" name="editbtn" value="Edit" onclick="editContent()" />
+                </form>                    
+            </div>
+            <iframe id="compare" src="test.html" onLoad="adjust_frame_css()" width="100%" scrolling="on" frameborder="0" style="border: 0px;"></iframe>
+        </div>
+    </main>
+</body>
