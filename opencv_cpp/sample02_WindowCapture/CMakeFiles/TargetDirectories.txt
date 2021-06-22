@@ -1,3 +1,0 @@
-/home/fumihachi/ws/github/vision_atelier/opencv_cpp/sample02_WindowCapture/CMakeFiles/rebuild_cache.dir
-/home/fumihachi/ws/github/vision_atelier/opencv_cpp/sample02_WindowCapture/CMakeFiles/sample02.dir
-/home/fumihachi/ws/github/vision_atelier/opencv_cpp/sample02_WindowCapture/CMakeFiles/edit_cache.dir

@@ -1,6 +1,0 @@
-cmake_minimum_required(VERSION 2.8)
-project( Sample01DisplayImage )
-find_package( OpenCV REQUIRED )
-include_directories( ${OpenCV_INCLUDE_DIRS} )
-add_executable( sample01 sample01.cpp )
-target_link_libraries( sample01 ${OpenCV_LIBS} )

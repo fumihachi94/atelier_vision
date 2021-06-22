@@ -1,3 +1,0 @@
-/home/fumihachi/ws/github/vision_atelier/opencv_cpp/sample03_MouseEvent/CMakeFiles/rebuild_cache.dir
-/home/fumihachi/ws/github/vision_atelier/opencv_cpp/sample03_MouseEvent/CMakeFiles/sample03.dir
-/home/fumihachi/ws/github/vision_atelier/opencv_cpp/sample03_MouseEvent/CMakeFiles/edit_cache.dir
